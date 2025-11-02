@@ -78,7 +78,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen bg-[radial-gradient(1000px_400px_at_-10%_-10%,#fde1e6_5%,transparent),radial-gradient(1000px_400px_at_110%_-10%,#dbeafe_5%,transparent),radial-gradient(1000px_400px_at_50%_120%,#ccfbf1_5%,transparent)] bg-fixed">
+    <div className="min-h-screen bg-[radial-gradient(1000px_400px_at_-10%_-10%,#fff7ed_10%,transparent),radial-gradient(1000px_400px_at_110%_-10%,#fafaf9_10%,transparent),radial-gradient(1000px_400px_at_50%_120%,#fef3c7_10%,transparent)] bg-fixed">
       <Header
         ownerMode={ownerMode}
         onToggleOwner={(v) => setOwnerMode(v)}
@@ -89,8 +89,8 @@ export default function App() {
         <section className="py-10">
           <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-4">
             <div>
-              <h2 className="text-2xl font-semibold text-slate-800">Our Stationery</h2>
-              <p className="text-slate-600 text-sm">Pastel-perfect picks for school, office, and creative play.</p>
+              <h2 className="text-2xl font-semibold text-stone-800">Our Stationery</h2>
+              <p className="text-stone-600 text-sm">Warm, cozy picks for school, office, and creative play.</p>
             </div>
             <div className="flex items-center gap-2">
               <input
@@ -98,12 +98,12 @@ export default function App() {
                 value={query}
                 onChange={(e) => setQuery(e.target.value)}
                 placeholder="Search pens, notebooks, colors..."
-                className="w-full sm:w-72 rounded-xl border border-slate-200 bg-white/80 px-4 py-2 outline-none focus:ring-2 focus:ring-blue-200/70 focus:border-blue-200"
+                className="w-full sm:w-72 rounded-xl border border-stone-200 bg-white/90 px-4 py-2 outline-none focus:ring-2 focus:ring-amber-200/70 focus:border-amber-200"
               />
               {ownerMode && (
                 <button
                   onClick={() => setOpenForm(true)}
-                  className="sm:hidden px-3 py-2 rounded-lg bg-gradient-to-r from-teal-300 to-blue-300 text-slate-900 font-medium"
+                  className="sm:hidden px-3 py-2 rounded-lg bg-gradient-to-r from-amber-300 to-amber-400 text-stone-900 font-medium"
                 >
                   Add
                 </button>

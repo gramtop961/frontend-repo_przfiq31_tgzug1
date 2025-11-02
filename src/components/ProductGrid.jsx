@@ -16,11 +16,11 @@ function Rating({ value, count, onRate, disabled }) {
           aria-label={`Rate ${i} star${i > 1 ? 's' : ''}`}
         >
           <Star
-            className={`w-4 h-4 ${i <= rounded ? 'fill-yellow-400 text-yellow-400' : 'text-slate-300'}`}
+            className={`w-4 h-4 ${i <= rounded ? 'fill-yellow-400 text-yellow-400' : 'text-stone-300'}`}
           />
         </button>
       ))}
-      <span className="text-xs text-slate-500 ml-1">({count || 0})</span>
+      <span className="text-xs text-stone-500 ml-1">({count || 0})</span>
     </div>
   );
 }
@@ -29,7 +29,7 @@ export default function ProductGrid({ products, ownerMode, onToggleStock, onRate
   if (!products.length) {
     return (
       <div className="text-center py-16">
-        <p className="text-slate-600">No items yet. Switch on Owner mode to add products.</p>
+        <p className="text-stone-600">No items yet. Switch on Owner mode to add products.</p>
       </div>
     );
   }
@@ -37,7 +37,7 @@ export default function ProductGrid({ products, ownerMode, onToggleStock, onRate
   return (
     <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6">
       {products.map((p) => (
-        <div key={p.id} className="group rounded-2xl overflow-hidden bg-white border border-slate-100 shadow-sm hover:shadow-md transition-shadow">
+        <div key={p.id} className="group rounded-2xl overflow-hidden bg-white border border-stone-100 shadow-sm hover:shadow-md transition-shadow">
           <div className="relative aspect-[4/3] overflow-hidden">
             <img
               src={p.imageUrl || fallbackImg}
@@ -49,7 +49,7 @@ export default function ProductGrid({ products, ownerMode, onToggleStock, onRate
             />
             {!p.inStock && (
               <div className="absolute inset-0 bg-white/70 backdrop-blur flex items-center justify-center">
-                <span className="px-3 py-1 text-sm rounded-full bg-slate-200 text-slate-700 border border-slate-300">Out of stock</span>
+                <span className="px-3 py-1 text-sm rounded-full bg-stone-200 text-stone-700 border border-stone-300">Out of stock</span>
               </div>
             )}
           </div>
@@ -57,16 +57,16 @@ export default function ProductGrid({ products, ownerMode, onToggleStock, onRate
           <div className="p-4 space-y-2">
             <div className="flex items-start justify-between gap-2">
               <div>
-                <h3 className="font-semibold text-slate-800">{p.name}</h3>
-                <p className="text-sm text-slate-500">${p.price.toFixed(2)}</p>
+                <h3 className="font-semibold text-stone-800">{p.name}</h3>
+                <p className="text-sm text-stone-600">${p.price.toFixed(2)}</p>
               </div>
               {ownerMode && (
                 <button
                   onClick={() => onToggleStock(p.id)}
                   className={`text-xs px-3 py-1 rounded-full border transition-colors ${
                     p.inStock
-                      ? 'bg-teal-50 text-teal-700 border-teal-200 hover:bg-teal-100'
-                      : 'bg-slate-100 text-slate-700 border-slate-200 hover:bg-slate-200'
+                      ? 'bg-amber-50 text-amber-800 border-amber-200 hover:bg-amber-100'
+                      : 'bg-stone-100 text-stone-700 border-stone-200 hover:bg-stone-200'
                   }`}
                 >
                   {p.inStock ? 'Mark out' : 'Mark in'}
